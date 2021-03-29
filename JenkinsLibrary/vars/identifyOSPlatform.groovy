@@ -14,6 +14,12 @@
 				verboseLogging: verboseLogging
 			);
 
+	Return options
+		windows
+		macosx
+		linux
+
+
     Date					Name					Description
 	-----------------------------------------------------------------------
 	March 29 2021				R. Kajiura			Initial 
@@ -44,20 +50,6 @@ def call(Map stageParams = [:]) {
     else {
 		throw new Exception("Unsupported os: ${osname}");
 	}
-
-	// switch(osname) {
-	// 	case string s when s.startsWith('Windows'):
-	// 		//return 'windows';
-	// 		return true;
-	// 	case string s when s.startsWith('Mac'):
-	// 		//return 'mac';
-	// 		return false;
-	// 	case string s when s.contains('nux'):
-	// 		//return 'linux';
-	// 		return false;
-	// 	default:
-	// 		throw new Exception("Unsupported os: ${osname}");	
-	// }
 
 
 	if (stageParams.verboseLogging > 1) {
