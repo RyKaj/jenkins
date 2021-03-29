@@ -4,8 +4,22 @@
     Author: Ryan Kajiura
 
     Requires Plugin
-		https://github.com/jenkinsci/cucumber-reports-plugin        
+		https://github.com/jenkinsci/cucumber-reports-plugin      
 
+    Repo: https://git.pyrsoftware.ca/stash/projects/AV/repos/jenkinsfile/browse
+
+    Used in:
+        - AV SmokeTest.jenkinsfile
+        - AV E2ETests.jenkinsfile
+    
+    Code Snippit
+		publishCucumberReports(
+			path: env.cucumberDirectory, 
+			fileName: testCase, 
+			paramBrowser: paramBrowser, 
+			verboseLogging: verboseLogging
+		);
+    
 
     Date					Name					Description
 	-----------------------------------------------------------------------
@@ -13,20 +27,32 @@
 */
 
 
-def call (path, fileName, paramBrowser, verboseLogging) {
-	if (verboseLogging > 1) {
-		echo "function start 'publishCucumberReports' parameter: path: '${path}' ;;  fileName: '${fileName}' ;; paramBrowser: '${paramBrowser}' ";		
+def call(Map stageParams = [:]) {
+	if (stageParams.verboseLogging > 1) {
+		echo "function start 'publishCucumberReports'...";
+        stageParams.each { it -> 
+            echo "parameters.... '${it.key}': '${it.value}' "; 
+        };
+        echo " ";
 	}
 
 	try {
+
  		cucumber buildStatus: "${currentBuild.currentResult}",
 					fileIncludePattern: "**/*.json",
 					trendsLimit: 10,
 					classifications: [[
 						'key': 'Browser',
-							'value': "${paramBrowser}"
+						'value': "${stageParams.paramBrowser}"
 					]];
 	
+ 		// cucumber buildStatus: "${currentBuild.currentResult}",
+		// 			fileIncludePattern: "${path}\\*.json",
+		// 			trendsLimit: 10,
+		// 			classifications: [[
+		// 				'key': 'Browser',
+		// 				'value': 'Firefox'
+		// 			]]
 	}
 	catch(e) { 
 		echo "**********************************************************************";
@@ -40,8 +66,8 @@ def call (path, fileName, paramBrowser, verboseLogging) {
 	}
 	finally {}
 
-	if (verboseLogging > 1) {
-		echo "function start 'publishCucumberReports' -  '${fileName}' Cucumber Report...";
+	if (stageParams.verboseLogging > 1) {
+		echo "function END 'publishCucumberReports'...";
 	}
 	return true;
 }

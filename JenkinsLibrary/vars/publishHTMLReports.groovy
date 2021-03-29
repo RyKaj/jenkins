@@ -3,8 +3,22 @@
 /*
     Author: Ryan Kajiura
 
-	Requires Plugin https://github.com/jenkinsci/htmlpublisher-plugin
+    Requires Plugin 
+		https://github.com/jenkinsci/htmlpublisher-plugin
+
+    Repo: https://git.pyrsoftware.ca/stash/projects/AV/repos/jenkinsfile/browse
+
+    Used in:
+        - AV SmokeTest.jenkinsfile
+        - AV E2ETests.jenkinsfile
     
+    Code Snippit
+		publishHTMLReports(
+			path: env.cucumberDirectory, 
+			fileName: testCase,
+			verboseLogging: verboseLogging
+		);
+
 
 
     Date					Name					Description
@@ -13,20 +27,25 @@
 */
 
 
-def call (path, fileName, verboseLogging) {
-	if (verboseLogging > 1) {
-		echo "function start 'publishHTMLReports' parameter: path: '${path}' ;;  fileName: '${fileName}'  ";
+def call(Map stageParams = [:]) {
+	if (stageParams.verboseLogging > 1) {
+		echo "function start 'publishHTMLReports'...";
+        stageParams.each { it -> 
+            echo "parameters.... '${it.key}': '${it.value}' "; 
+        };
+        echo " ";
 	}
+
 
 	try {
 		publishHTML ([
 						allowMissing: true,
 						alwaysLinkToLastBuild: false,
 						keepAll: false, 
-						reportDir: "${path}\\${fileName}", 
+						reportDir: "${stageParams.path}\\${stageParams.fileName}", 
 						reportFiles: 'index.html', 
 						reportName: "HTML Reports", 
-						reportTitles: "${fileName} Reports"
+						reportTitles: "${stageParams.fileName} Reports"
 					]);
 	}
 	catch(e) { 
@@ -41,8 +60,8 @@ def call (path, fileName, verboseLogging) {
 	}
 	finally {}
 
-	if (verboseLogging > 1) { 
-		echo "function end 'publishHTMLReports' -  '${fileName}' HTML Report...";
+	if (stageParams.verboseLogging > 1) { 
+		echo "function end 'publishHTMLReports' -  '${stageParams.fileName}' HTML Report...";
 	}
 	return true;
 }
