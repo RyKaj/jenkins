@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 /*
-    Author: Ryan Kajiura
+    Author: Ryan Kajiura - https://www.linkedin.com/in/ryankajiura/
 
    Note:
       Try catch is a hack to quckly identify if the Jenkins has AnsiColor plug-in installed or not
