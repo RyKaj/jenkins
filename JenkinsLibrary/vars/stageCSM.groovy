@@ -3,8 +3,6 @@
 /*
     Author: Ryan Kajiura
 
-    Repo: https://git.pyrsoftware.ca/stash/projects/AV/repos/jenkinsfile/browse
-    
     Code Snippit: 
         stageCSM (
             branch: constant.GIT_BRANCH,
