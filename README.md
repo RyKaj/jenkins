@@ -21,7 +21,7 @@ After code has been merge from **feature** to **develop**, pull requst for code 
 #### Node
 Allocates an executor on a node (typically a build agent) and runs further code in the context of a workspace on that Agent
 
-<kbd>![](<img src="./resources/JenkinFileStructure.png" alt="">)</kbd>
+<kbd>![](<img src="./Resources/JenkinFileStructure.png" alt="">)</kbd>
 
 #### Pipeline
 Provides an extensible set of tools for modeling simple-to-complex delivery pipelines "as code". The definition of a Jenkins Pipeline is typically written into a text file called Jenkinsfile which can be checked into a project's source control repository. Contains the entire Jenkins Pipeline definition
