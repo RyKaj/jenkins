@@ -21,8 +21,7 @@ After code has been merge from **feature** to **develop**, pull requst for code 
 #### Node
 Allocates an executor on a node (typically a build agent) and runs further code in the context of a workspace on that Agent
 
-<!-- <kbd>![Jenkins Structure](<img src="./Resources/JenkinFileStructure.png" alt="">)</kbd> -->
-<kbd>![Jenkins Structure](<img src="https://github.com/RyKaj/jenkins/blob/main/Resources/JenkinFileStructure.png" alt="">)</kbd>
+<img src="https://github.com/RyKaj/jenkins/blob/main/Resources/JenkinFileStructure.png" alt="Jenkins Structure" />
 
 
 #### Pipeline
