@@ -1,5 +1,5 @@
 # JenkinsFiles
-## Central location for all Test Automation Jobs
+
 
 ### Branching flow 
 Master - Production code. Jenkins jobs will point to this branch <br />
@@ -294,4 +294,4 @@ Resources files
 | [`Jenkins Declarative pipeline refcard.pdf`](Resources/Jenkins Declarative pipeline refcard.pdf)         | eBook |
 | [`eBook - Jenkins The Definitive Guide.pdf`](Resources/eBook - Jenkins The Definitive Guide.pdf)         | eBook |
 | [`eBook - Jenkins User Handbook.pdf`](Resources/eBook - Jenkins User Handbook.pdf)         | eBook |
-
+| [`ebook - Setting Up Jenkins from Scratch,pdf`](Resources/Jenkins from Scratch.pdf)         | eBook |
