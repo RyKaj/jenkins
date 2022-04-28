@@ -290,8 +290,8 @@ Resources files
 
 | Name                                       | Type     |
 |--------------------------------------------|----------|
-| [`GroovyDSL References.pdf`](Resources/GroovyDSL References.pdf)         | eBook |
-| [`Jenkins Declarative pipeline refcard.pdf`](Resources/Jenkins Declarative pipeline refcard.pdf)         | eBook |
-| [`eBook - Jenkins The Definitive Guide.pdf`](Resources/eBook - Jenkins The Definitive Guide.pdf)         | eBook |
-| [`eBook - Jenkins User Handbook.pdf`](Resources/eBook - Jenkins User Handbook.pdf)         | eBook |
-| [`ebook - Setting Up Jenkins from Scratch,pdf`](Resources/Jenkins from Scratch.pdf)         | eBook |
+| [`GroovyDSL References.pdf`](Resources/GroovyDSL%20References.pdf)         | eBook |
+| [`Jenkins Declarative pipeline refcard.pdf`](Resources/Jenkins%20Declarative%20pipeline%20refcard.pdf)         | eBook |
+| [`eBook - Jenkins The Definitive Guide.pdf`](Resources//eBook%20-%20Jenkins%20The%20Definitive%20Guide.pdf)         | eBook |
+| [`eBook - Jenkins User Handbook.pdf`](Resources/eeBook%20-%20Jenkins%20User%20Handbook.pdf)         | eBook |
+| [`ebook - Setting Up Jenkins from Scratch,pdf`](Resources/Jenkins%20from%20Scratch.pdf)         | eBook |
